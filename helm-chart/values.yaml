@@ -1,7 +1,6 @@
 replicaCount: 1
 namespace: metrics-app
 
-
 image:
   repository: ghcr.io/cloudraftio/metrics-app
   tag: "1.1"

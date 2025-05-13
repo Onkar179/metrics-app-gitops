@@ -16,7 +16,7 @@ spec:
         - values.yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: default
+    namespace: metrics-app
   syncPolicy:
     automated:
       prune: true

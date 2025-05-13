@@ -8,7 +8,7 @@ spec:
   sourceRepos:
     - 'https://github.com/Onkar179/metrics-app-gitops.git'
   destinations:
-    - namespace: default
+    - namespace: metrics-app
       server: https://kubernetes.default.svc
   permitOnlyProjectScopedClusters: false
   clusterResourceWhitelist:
