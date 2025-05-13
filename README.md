@@ -323,7 +323,7 @@ http_code: 200
 
 ## Possible Solution
 
-- *** To make trigger_background_collection() not create any blocking threads & processes, we can implement threading to start the metrics.trigger_background_collection() asynchronously in the background as a separate non-blocking thread.***
+- ***To make trigger_background_collection() not create any blocking threads & processes, we can implement threading to start the metrics.trigger_background_collection() asynchronously in the background as a separate non-blocking thread.***
 
 - **Updated app.py**
 
