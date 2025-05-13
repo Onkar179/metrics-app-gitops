@@ -6,10 +6,22 @@ metadata:
 spec:
   description: Project for Metrics App
   sourceRepos:
-    - '*'
+    - 'https://github.com/Onkar179/metrics-app-gitops.git'
   destinations:
     - namespace: default
       server: https://kubernetes.default.svc
-  clusterResourceWhitelist:
-    - group: '*'
-      kind: '*'
+  permitOnlyProjectScopedClusters: true
+  clusterResourceWhitelist: []
+  namespaceResourceWhitelist:
+    - group: ""
+      kind: Service
+    - group: ""
+      kind: Deployment
+    - group: ""
+      kind: ConfigMap
+    - group: "apps"
+      kind: Deployment
+    - group: "networking.k8s.io"
+      kind: Ingress
+  orphanedResources:
+    warn: true

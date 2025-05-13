@@ -3,6 +3,10 @@ kind: Application
 metadata:
   name: metrics-app
   namespace: argocd
+  labels:
+    app.kubernetes.io/managed-by: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
 spec:
   project: metrics-project
   source:
@@ -21,3 +25,5 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=false
+      - Validate=true
+      - PruneLast=true
