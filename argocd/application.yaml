@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: metrics-app
+  namespace: argocd
+spec:
+  project: metrics-project
+  source:
+    repoURL: https://github.com/Onkar179/metrics-app-gitops.git
+    targetRevision: HEAD
+    path: helm-chart
+    helm:
+      valueFiles:
+        - values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=false
