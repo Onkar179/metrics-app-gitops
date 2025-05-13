@@ -10,20 +10,9 @@ spec:
   destinations:
     - namespace: default
       server: https://kubernetes.default.svc
-  permitOnlyProjectScopedClusters: true
-  clusterResourceWhitelist: []
-  namespaceResourceWhitelist:
-    - group: ""
-      kind: Namespace
-    - group: ""
-      kind: Service
-    - group: ""
-      kind: Deployment
-    - group: ""
-      kind: ConfigMap
-    - group: "apps"
-      kind: Deployment
-    - group: "networking.k8s.io"
-      kind: Ingress
+  permitOnlyProjectScopedClusters: false
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
   orphanedResources:
     warn: true
